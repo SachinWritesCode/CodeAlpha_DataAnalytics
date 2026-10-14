@@ -1,0 +1,75 @@
+
+--- Dataset shape ---
+Rows: 30, Columns: 7
+
+--- First five rows ---
+        Date Region       Product  ... Quantity  Unit_Price_INR  Sales_INR
+0 2026-01-03  North        Laptop  ...        2           45000      90000
+1 2026-01-05  South    Headphones  ...        5            1800       9000
+2 2026-01-08   East  Office Chair  ...        3            5200      15600
+3 2026-01-12   West      Notebook  ...       20              60       1200
+4 2026-01-15    NaN    Smartphone  ...        4           18000      72000
+
+[5 rows x 7 columns]
+
+--- Data types ---
+Date              datetime64[ns]
+Region                    object
+Product                   object
+Category                  object
+Quantity                   int64
+Unit_Price_INR             int64
+Sales_INR                  int64
+dtype: object
+
+--- Missing values by column ---
+Date              0
+Region            2
+Product           0
+Category          0
+Quantity          0
+Unit_Price_INR    0
+Sales_INR         0
+dtype: int64
+
+--- Numeric summary ---
+       Quantity  Unit_Price_INR  Sales_INR
+count     30.00           30.00      30.00
+mean       7.63        12029.67   30671.67
+std        9.64        14428.87   33828.77
+min        1.00           60.00    1200.00
+25%        2.00         1800.00    8625.00
+50%        3.00         8500.00   17000.00
+75%        6.75        16500.00   42750.00
+max       40.00        45000.00  135000.00
+
+--- Monthly sales (INR) ---
+ Date
+2026-01    243050
+2026-02    168200
+2026-03    278900
+2026-04    230000
+Freq: M, Name: Sales_INR, dtype: int64
+
+--- Sales by category (INR) ---
+ Category
+Electronics    776400
+Furniture      130400
+Stationery      13350
+Name: Sales_INR, dtype: int64
+
+--- Sales by region (INR; missing region excluded) ---
+ Region
+North    398800
+East     174750
+South    143300
+West     120900
+Name: Sales_INR, dtype: int64
+
+--- Total sales (INR) --- 920150
+Top sales category: Electronics
+Top quantity product: Notebook
+
+Charts saved to: /mnt/data/CodeAlpha_EDA_DataVisualization/charts
+EDA note: Region has missing values; investigate or label them as 'Unknown' before region-level reporting.
+
